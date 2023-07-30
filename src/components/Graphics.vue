@@ -16,6 +16,7 @@
   </div>
 </template>
 
+
 <script lang="ts" setup>
 const graphicGroups = [
   {
