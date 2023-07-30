@@ -27,6 +27,7 @@
     "@types/file-saver": "^2.0.5",
     "@vitejs/plugin-vue": "^4.2.3",
     "autoprefixer": "^10.4.13",
+    "netlify-cli": "^15.9.1",
     "path": "^0.12.7",
     "postcss": "^8.4.6",
     "postcss-import": "^14.1.0",
