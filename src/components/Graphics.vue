@@ -100,6 +100,16 @@ const graphicGroups = [
           name: 'diamond',
         },
       },
+       {
+        name: 'Uninstantiated',
+        icon: 'l-triangle',
+        id: 4,
+        data: {
+          width: 50,
+          height: 50,
+          name: 'triangle',
+        },
+      },
     ],
   }
 ];
