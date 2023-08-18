@@ -395,9 +395,9 @@ const changeFromArrow = (value: string) => {
 
 const changeToArrow = (value: string) => {
   toArrow.value = value;
-  // 画布默认值
+  //default value 
   meta2d.store.data.toArrow = value;
-  // 活动层的箭头都变化
+  // arrow head is changing
   if (meta2d.store.active) {
     meta2d.store.active.forEach((pen: Pen) => {
       if (pen.type === PenType.Line) {
@@ -433,19 +433,19 @@ function readFile(file: Blob) {
 }
 
 const openFile = () => {
-  // 1. 显示选择文件对话框
+  // 1. dropdown menu to open file
   const input = document.createElement('input');
   input.type = 'file';
   input.onchange = async (event) => {
     const elem = event.target as HTMLInputElement;
     if (elem.files && elem.files[0]) {
-      // 2. 读取文件字符串内容
+      // 2. read file
       const text = await readFile(elem.files[0]);
       try {
-        // 3. 打开文件内容
+        // 3. open the file
         meta2d.open(JSON.parse(text));
 
-        // 可选：缩放到窗口大小展示
+        // zoom in to window size 
         meta2d.fitView();
       } catch (e) {
         console.log(e);
