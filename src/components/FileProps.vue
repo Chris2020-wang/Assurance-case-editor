@@ -31,14 +31,14 @@
 
       <t-divider />
 
-      <!-- <t-form-item label="Background" name="background">
+      <t-form-item label="Background" name="background">
         <t-color-picker class="w-full" v-model="data.background" :show-primary-color-preview="false" format="CSS"
           :color-modes="['monochrome']" @change="onChangeData" />
       </t-form-item>
       <t-form-item label="Shape color" name="color">
         <t-color-picker class="w-full" v-model="data.color" :show-primary-color-preview="false" format="CSS"
           :color-modes="['monochrome']" @change="onChangeData" />
-      </t-form-item> -->
+      </t-form-item>
     </t-form>
   </div>
 </template>
@@ -63,11 +63,12 @@ const options = reactive<any>({
 });
 
 onMounted(() => {
-  const d: any = meta2d.data();
+  // const d: any = meta2d.data();
   // data.name = d.name || 'file';
+
   data.name = '';
-  data.background = d.background;
-  data.color = d.color;
+  data.background = "rgba(255, 255, 255, 1)";
+  data.color = "rgba(0, 0, 0, 1)";
 
   Object.assign(options, meta2d.getOptions());
 });
