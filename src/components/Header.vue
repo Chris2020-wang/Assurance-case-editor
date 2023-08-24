@@ -1,9 +1,5 @@
 <template>
   <div class="app-header">
-    <!-- <a class="logo" href="https://le5le.com" target="_blank">
-      <img src="/favicon.ico" />
-      <span>乐吾乐</span>
-    </a> -->
     <t-dropdown
       :minColumnWidth="200"
       :maxHeight="560"
@@ -198,6 +194,7 @@
             <svg class="l-icon" aria-hidden="true">
               <use :xlink:href="item.icon"></use>
             </svg>
+            <span style="padding-left: 30px">{{ item.name }}</span>
           </div>
         </t-dropdown-item>
       </t-dropdown-menu>
@@ -225,6 +222,7 @@
             <svg class="l-icon" aria-hidden="true">
               <use :xlink:href="item.icon"></use>
             </svg>
+            <span style="padding-left: 30px">{{ item.name }}</span>
           </div>
         </t-dropdown-item>
       </t-dropdown-menu>
@@ -255,38 +253,6 @@ import FileSaver from 'file-saver';
 import { MessagePlugin } from 'tdesign-vue-next';
 
 const router = useRouter();
-
-// const assets = reactive({
-//   home: 'https://le5le.com',
-//   helps: [
-//     {
-//       name: '产品介绍',
-//       url: 'https://doc.le5le.com/document/118756411',
-//     },
-//     {
-//       name: '快速上手',
-//       url: 'https://doc.le5le.com/document/119363000',
-//     },
-//     {
-//       name: '使用手册',
-//       url: 'https://doc.le5le.com/document/118764244',
-//     },
-//     {
-//       name: '快捷键',
-//       url: 'https://doc.le5le.com/document/119620214',
-//       divider: true,
-//     },
-//     {
-//       name: '企业服务与支持',
-//       url: 'https://doc.le5le.com/document/119296274',
-//       divider: true,
-//     },
-//     {
-//       name: '关于我们',
-//       url: 'https://le5le.com/about.html',
-//     },
-//   ],
-// });
 
 const isDrawLine = ref<boolean>(false);
 
@@ -345,12 +311,12 @@ const changeLineType = (value: string) => {
 const fromArrow = ref('');
 const fromArrows = [
   { icon: '#l-line', value: '' },
-  { icon: '#l-from-triangle', value: 'triangle' },
+  { icon: '#l-from-triangle', value: 'triangle' , name:'InContextOf'},
   // { icon: '#l-from-diamond', value: 'diamond' },
   // { icon: '#l-from-circle', value: 'circle' },
   // { icon: '#l-from-lineDown', value: 'lineDown' },
   // { icon: '#l-from-lineUp', value: 'lineUp' },
-  { icon: '#l-from-triangleSolid', value: 'triangleSolid' },
+  { icon: '#l-from-triangleSolid', value: 'triangleSolid' , name:'SupportedBy'},
   // { icon: '#l-from-diamondSolid', value: 'diamondSolid' },
   // { icon: '#l-from-circleSolid', value: 'circleSolid' },
   // { icon: '#l-from-line', value: 'line' },
@@ -358,12 +324,12 @@ const fromArrows = [
 const toArrow = ref('');
 const toArrows = [
   { icon: '#l-line', value: '' },
-  { icon: '#l-to-triangle', value: 'triangle' },
+  { icon: '#l-to-triangle', value: 'triangle', name:'InContextOf'},
   // { icon: '#l-to-diamond', value: 'diamond' },
   // { icon: '#l-to-circle', value: 'circle' },
   // { icon: '#l-to-lineDown', value: 'lineDown' },
   // { icon: '#l-to-lineUp', value: 'lineUp' },
-  { icon: '#l-to-triangleSolid', value: 'triangleSolid' },
+  { icon: '#l-to-triangleSolid', value: 'triangleSolid',  name:'SupportedBy'},
   // { icon: '#l-to-diamondSolid', value: 'diamondSolid' },
   // { icon: '#l-to-circleSolid', value: 'circleSolid' },
   // { icon: '#l-to-line', value: 'line' },
